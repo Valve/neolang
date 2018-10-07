@@ -1,5 +1,6 @@
 import os
 from flask import Flask
+from flask import render_template
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
 
@@ -19,7 +20,7 @@ def create_app(test_config = None):
 
   @app.route('/')
   def root():
-    return 'Welcome to NeoLang'
+    return render_template('index.html')
 
 
   return app
