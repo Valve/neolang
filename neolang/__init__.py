@@ -1,6 +1,5 @@
 import os
 from flask import Flask
-from flask import render_template
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
 
@@ -17,10 +16,5 @@ def create_app(test_config = None):
 
   from neolang.api import api
   app.register_blueprint(api)
-
-  @app.route('/')
-  def root():
-    return render_template('index.html')
-
 
   return app

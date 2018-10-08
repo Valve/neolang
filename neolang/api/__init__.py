@@ -2,7 +2,7 @@ from flask import jsonify
 from flask import Blueprint
 from neolang.api.models import LanguagePart
 
-api = Blueprint('api', 'api', url_prefix='/api')
+api = Blueprint('api', 'api', url_prefix='/v1')
 
 @api.route('/parts')
 def language_parts():
