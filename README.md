@@ -9,7 +9,7 @@ cp .env.example .env
 
 ### Create virtual env
 ```
-virtual env .venv
+virtualenv .venv
 source .venv/bin/activate
 (.venv) pip install -r requirements.txt
 (.venv) pip install -U pip
