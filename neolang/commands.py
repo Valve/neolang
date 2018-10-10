@@ -1,6 +1,5 @@
 import os
 import click
-import requests
 from flask.cli import with_appcontext
 from neolang import db
 
