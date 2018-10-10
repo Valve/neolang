@@ -1,6 +1,7 @@
 import os
 import click
 from flask import Flask
+from flask_cors import CORS
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
 
@@ -15,6 +16,7 @@ def create_app(test_config = None):
   migrate.init_app(app, db)
   register_blueprints(app)
   register_commands(app)
+  CORS(app)
   return app
 
 def register_blueprints(app):
