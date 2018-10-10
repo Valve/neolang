@@ -32,8 +32,7 @@ def upgrade():
     )
     op.create_table('entries',
     sa.Column('id', sa.Integer(), nullable=False),
-    sa.Column('lang', sa.String(length=2), nullable=False),
-    sa.Column('word', sa.Text(), nullable=False),
+    sa.Column('text', sa.Text(), nullable=False),
     sa.Column('entry_type_id', sa.Integer(), nullable=False),
     sa.ForeignKeyConstraint(['entry_type_id'], ['entry_types.id'], ),
     sa.PrimaryKeyConstraint('id')
@@ -48,6 +47,7 @@ def upgrade():
     )
     op.create_table('translations',
     sa.Column('id', sa.Integer(), nullable=False),
+    sa.Column('lang', sa.String(length=2), nullable=False),
     sa.Column('entry_id', sa.Integer(), nullable=False),
     sa.Column('translation', sa.Text(), nullable=False),
     sa.Column('comment', sa.Text(), nullable=True),

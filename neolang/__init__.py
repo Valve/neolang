@@ -3,7 +3,6 @@ import click
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
-from neolang import commands
 
 db = SQLAlchemy()
 migrate = Migrate()
@@ -16,8 +15,6 @@ def create_app(test_config = None):
   migrate.init_app(app, db)
   register_blueprints(app)
   register_commands(app)
-
-
   return app
 
 def register_blueprints(app):
@@ -25,6 +22,8 @@ def register_blueprints(app):
   app.register_blueprint(api)
 
 def register_commands(app):
+  from neolang import commands
   app.cli.add_command(commands.seed)
+  app.cli.add_command(commands.seed_entry_types)
 
 

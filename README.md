@@ -20,8 +20,14 @@ source .venv/bin/activate
 flask db upgrade
 ```
 
-### Seed DB manually by running seed.sql in neolang DB
-...
+### Seed DB 
+
+```
+# seed entry types separately
+flask seed-entry-types
+# seed the rest of the data
+flask seed
+```
 
 Now the app is ready to run.
 
